@@ -16,9 +16,6 @@ jobs:
 
       - name: コンパイルの実行
         run: nim c -d:mingw hello.nim
-
-      - name: Linuxでコンパイル
-        run: nim c hello.nim
       
       - name: 成果物の確認
         run: ls -la
