@@ -14,7 +14,7 @@ jobs:
         run: cd  ${GITHUB_WORKSPACE}
 
       - name: コンパイルの実行
-        run: nim c -d:mingw main.nim
+        run: nim c -d:mingw hello.nim
 
       - name: Linuxでコンパイル
         run: nim c main.nim
