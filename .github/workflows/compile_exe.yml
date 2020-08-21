@@ -1,17 +1,18 @@
+on: push
 jobs:
-  build:
+  build_exe:
     runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v2
-    
-    - name: nim環境の準備
-      run: apt install nim
+    steps:
+      - uses: actions/checkout@v2
 
-    - name: Windowsへのクロスコンパイル環境
-      run: apt install mingw-w64
+      - name: nim環境の準備
+        run: apt install nim
 
-    - name: コンパイル位実行
-      run: nim c -d:mingw main.nim
+      - name: Windowsへのクロスコンパイル環境
+        run: apt install mingw-w64
 
-    - name: Linuxでコンパイル
-      run: nim c main.nim
+      - name: コンパイル位実行
+        run: nim c -d:mingw main.nim
+
+      - name: Linuxでコンパイル
+        run: nim c main.nim
