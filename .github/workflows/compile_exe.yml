@@ -8,14 +8,14 @@ jobs:
       - name: nim環境の準備
         run: sudo apt-get install nim
 
-      #- name: Windowsへのクロスコンパイル環境
-      #  run: sudo apt-get install mingw-w64
+      - name: Windowsへのクロスコンパイル環境
+        run: sudo apt-get install mingw64-binutils mingw64-gcc mingw64-gcc-c++ 
+
       - name: ディレクトリの移動
         run: cd  ${GITHUB_WORKSPACE}
 
       - name: コンパイルの実行
-        run: nim -c --os:windows hello.nim
-        #run: nim c -d:mingw hello.nim
+        run: nim c -d:mingw hello.nim
 
       - name: Linuxでコンパイル
         run: nim c hello.nim
