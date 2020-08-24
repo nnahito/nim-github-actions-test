@@ -8,6 +8,9 @@ jobs:
       - name: install choosenim
         run: curl -OL https://github.com/dom96/choosenim/releases/download/v0.6.0/choosenim-0.6.0_windows_amd64.exe
       
+      - name: where?
+        run: dir
+      
       - name: choosenim first install
         run: choosenim-0.6.0_windows_amd64.exe --firstInstall
       
