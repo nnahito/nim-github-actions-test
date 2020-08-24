@@ -4,6 +4,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - name: scoopをインストール
+        run: iwr -useb get.scoop.sh | iex
 
       - name: nim環境の準備
         run: scoop install nim
