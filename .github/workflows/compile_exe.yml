@@ -5,14 +5,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: scoopをインストール
-        run: iwr -useb get.scoop.sh | iex
+      - name: install choosenim
+        run: curl https://github.com/dom96/choosenim/releases/download/v0.6.0/choosenim-0.6.0_windows_amd64.exe
       
-      - name: power shellのパスを再読み込み
-        run: $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path")
-
-      - name: nim環境の準備
-        run: scoop install nim
+      - name: choosenim first install
+        run: choosenim-0.6.0_windows_amd64.exe --firstInstall
+      
+      - name: nimのダウンロード
+        run: choosenim-0.6.0_windows_amd64.exe stable
 
       - name: Nimのバージョン確認
         run: nim -v
