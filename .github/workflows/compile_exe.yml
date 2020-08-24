@@ -9,7 +9,7 @@ jobs:
         run: iwr -useb get.scoop.sh | iex
       
       - name: power shellのパスを再読み込み
-        run: call refreshenv 
+        run: $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path")
 
       - name: nim環境の準備
         run: scoop install nim
