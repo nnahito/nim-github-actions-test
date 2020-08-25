@@ -11,12 +11,6 @@ jobs:
       - name: where?
         run: dir
       
-      - name: ssh
-        uses: mxschmitt/action-tmate@v2
-      
-      - name: choosenim first install
-        run: choosenim-0.6.0_windows_amd64.exe --firstInstall
-      
       - name: nimのダウンロード
         run: choosenim-0.6.0_windows_amd64.exe stable
 
