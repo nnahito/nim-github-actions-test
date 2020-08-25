@@ -11,8 +11,11 @@ jobs:
       - name: where?
         run: dir
       
+      - name: ChangeName
+        run: mv choosenim-0.6.0_windows_amd64.exe choosenim.exe
+      
       - name: nimのダウンロード
-        run: choosenim-0.6.0_windows_amd64.exe stable
+        run: choosenim.exe stable
 
       - name: Nimのバージョン確認
         run: nim -v
